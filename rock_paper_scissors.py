@@ -18,6 +18,7 @@ while play_again != "no":
         player_move = scissors
     else:
         raise SystemExit("Invalid Input. Try again...")
+    print()
     print(f"You chose: {player_move}")
 
     computer_random_number = random.randint(1, 3)
@@ -36,16 +37,22 @@ while play_again != "no":
             (player_move == scissors and computer_move == paper):
         player_win_counter += 1
         print("You win!")
+        print()
     elif player_move == computer_move:
         print("Draw!")
+        print()
     else:
         computer_win_counter += 1
         print("You lose!")
+        print()
     print(f"Results: Player: {player_win_counter} W / Computer: {computer_win_counter} W")
+    print()
     player_decision = input("Type [yes] to Play Again or [no] to Quit: ")
     if player_decision == "yes":
         play_again = "yes"
     elif player_decision == "no":
         play_again = "no"
         print("Thank you for playing!")
-    print(f"Final Results: Player: {player_win_counter} W / Computer: {computer_win_counter} W")
+
+    print()
+print(f"Final Results: Player: {player_win_counter} W / Computer: {computer_win_counter} W")

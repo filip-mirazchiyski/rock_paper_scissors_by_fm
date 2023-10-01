@@ -5,6 +5,7 @@ paper = "Paper"
 scissors = "Scissors"
 player_win_counter = 0
 computer_win_counter = 0
+games_counter = 0
 
 play_again = ""
 
@@ -36,6 +37,7 @@ while play_again != "no":
             (player_move == paper and computer_move == rock) or \
             (player_move == scissors and computer_move == paper):
         player_win_counter += 1
+        games_counter += 1
         print("You win!")
         print()
     elif player_move == computer_move:
@@ -43,8 +45,10 @@ while play_again != "no":
         print()
     else:
         computer_win_counter += 1
+        games_counter += 1
         print("You lose!")
         print()
+    print(f"Games played: {games_counter}")
     print(f"Results: Player: {player_win_counter} W / Computer: {computer_win_counter} W")
     print()
     player_decision = input("Type [yes] to Play Again or [no] to Quit: ")
@@ -56,3 +60,8 @@ while play_again != "no":
 
     print()
 print(f"Final Results: Player: {player_win_counter} W / Computer: {computer_win_counter} W")
+
+player_win_percentage = player_win_counter / (games_counter / 100)
+computer_win_percentage = computer_win_counter / (games_counter / 100)
+print(f"You won {player_win_percentage:.2f}% of the games")
+print(f"The computer won {computer_win_percentage:.2f}% of the games")

@@ -41,6 +41,7 @@ while play_again != "no":
         print("You win!")
         print()
     elif player_move == computer_move:
+        games_counter += 1
         print("Draw!")
         print()
     else:
@@ -57,6 +58,8 @@ while play_again != "no":
     elif player_decision == "no":
         play_again = "no"
         print("Thank you for playing!")
+    else:
+        player_decision = input("You can only type [yes] to Play Again or [no] to Quit: ")
 
     print()
 print(f"Final Results: Player: {player_win_counter} W / Computer: {computer_win_counter} W")

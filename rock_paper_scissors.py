@@ -81,7 +81,7 @@ if game_type == game_free:
 if game_type == game_3_out_of_5:
     print("You've chosen: \"3 out of 5 game\"")
     print()
-    while player_win_counter < 3 or computer_win_counter < 3:
+    while player_win_counter != 3 or computer_win_counter != 3:
         player_move = input("Choose [r]ock, [p]aper or [s]cissors: ")
         if player_move == "r":
             player_move = rock
